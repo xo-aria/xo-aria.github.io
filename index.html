@@ -1,125 +1,651 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="I am a professional Web Developer and UI/UX Designer, experienced in creating user-friendly and SEO-optimized websites.">
-        <meta name="keywords" content="Arias, Web Developer, Web Designer, UI/UX, SEO, Frontend, Backend, Programming, Coding, Arias Portfolio">
-        <meta name="author" content="Arias">
-        <meta name="robots" content="index, follow">
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="I am a professional Web Developer and UI/UX Designer, experienced in creating user-friendly and SEO-optimized websites.">
+    <meta name="keywords" content="Arias, Web Developer, Web Designer, UI/UX, SEO, Frontend, Backend, Programming, Coding, Arias Portfolio">
+    <meta name="author" content="Arias">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (for social media preview) -->
+    <meta property="og:title" content="Arias - Web Developer & Designer">
+    <meta property="og:description" content="I create modern, user-friendly, and SEO-optimized websites. Check out my portfolio!">
+    <meta property="og:image" content="https://xo-aria.github.io/assets/me.jpg">
+    <meta property="og:url" content="https://xo-aria.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arias - Web Developer & Designer">
+    <meta name="twitter:description" content="I create modern, user-friendly, and SEO-optimized websites.">
+    <meta name="twitter:image" content="https://xo-aria.github.io/assets/me.jpg">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#035e53">
+
+    <title>XO Aria - Web Developer & Designer</title>
+    <link rel="shortcut icon" href="https://xo-aria.github.io/assets/me.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0a0a0a',
+                            light: '#ffffff',
+                            neon: '#00ff55',
+                            dim: '#1a1a1a',
+                            glass: 'rgba(255, 255, 255, 0.05)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-20px)'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            outline: none;
+        }
         
-        <!-- Open Graph Meta Tags (for social media preview) -->
-        <meta property="og:title" content="Arias - Web Developer & Designer">
-        <meta property="og:description" content="I create modern, user-friendly, and SEO-optimized websites. Check out my portfolio!">
-        <meta property="og:image" content="https://xo-aria.github.io/assets/me.jpg">
-        <meta property="og:url" content="https://xo-aria.github.io/">
-        <meta property="og:type" content="website">
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
         
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Arias - Web Developer & Designer">
-        <meta name="twitter:description" content="I create modern, user-friendly, and SEO-optimized websites.">
-        <meta name="twitter:image" content="https://xo-aria.github.io/assets/me.jpg">
-    
-        <!-- Theme Color -->
-        <meta name="theme-color" content="#035e53">
-    
-        <title>I am Arias - Web Developer & Designer</title>
-        <link rel="stylesheet" href="https://xo-aria.github.io/assets/styles.css">
-        <link rel="shortcut icon" href="https://xo-aria.github.io/assets/me.jpg">
-    </head>
-    
-<body>
-    <div class="landing">
-        <div align="full-center" class="col">
-            <img src="assets/me.jpg" class="svg rounded" alt="Arias" title="Arias" draggable="false">
-            <h1>Hello, im <span theme="light">Aria</span></h1>
-        </div>
-    </div>
+         ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #00ff55;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 85, 0.5);
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 10px rgba(0, 255, 85, 0.2);
+        }
+        
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 85, 0.6);
+            border-color: #00ff55;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dark .glass-panel {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        #three-js-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+        }
+    </style>
+</head>
 
-    <section align="full-center" class="fadein">
-        <div class="split">
-            <div align="full-center">
-                <img src="assets/image-1.jpg" title="About Arias" alt="About Arias" class="img" draggable="false">
-            </div>
-            <div>
-                <h2><span theme="dark">About</span></h2>
-                <p>I am a professional web developer and designer working in various areas of web development.<br><br>I have extensive experience in user interface (UI) and user experience (UX) design, and I know how to create websites that are not only beautiful and attractive but also user-friendly.<br><br>Additionally, I pay special attention to optimizing websites for search engines (SEO) and can help businesses improve their visibility in search results.<br><br>I am familiar with the latest technologies and trends in web development and am always looking to learn and enhance my skills. I believe that my commitment to quality and attention to detail sets my work apart from others.</p>
-            </div>
-        </div>
-    </section>
+<body class="bg-gray-50 text-gray-900 dark:bg-cyber-dark dark:text-gray-100 transition-colors duration-300 font-sans overflow-x-hidden">
 
-    <section align="full-center" class="landing bg fadein">
-        <div align="full-center" class="col">
-            <div align="full-center">
-                <h2><span theme="dark">My projects</span></h2>
-            </div>
-            <div align="full-center" class="col-2">
-                <a href="https://sirifoodbar.ir/" class="btn"><span>Siri</span></a>
-                <a href="https://hycom.ir/" class="btn"><span>HyCom</span></a>
-            </div>
-        </div>
-    </section>
+    <canvas id="three-js-canvas"></canvas>
 
-    <section align="full-center" class="fadein">
-        <div class="split">
-            <div>
-                <h2><span theme="dark">My skills</span></h2>
-                <img src="https://img.shields.io/badge/python-035e53?style=for-the-badge&logo=python&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/php-035e53?style=for-the-badge&logo=php&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/javascript-035e53?style=for-the-badge&logo=javascript&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/sql-035e53?style=for-the-badge&logo=mysql&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/html-035e53?style=for-the-badge&logo=html5&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/css-035e53?style=for-the-badge&logo=css3&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/bootstrap-035e53?style=for-the-badge&logo=bootstrap&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/node.js-035e53?style=for-the-badge&logo=node.js&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/wordpress-035e53?style=for-the-badge&logo=wordpress&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/codepen-035e53?style=for-the-badge&logo=codepen&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/flutter-035e53?style=for-the-badge&logo=flutter&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/tensorflow-035e53?style=for-the-badge&logo=tensorflow&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/postman-035e53?style=for-the-badge&logo=postman&logoColor=fff" draggable="false">
-                <img src="https://img.shields.io/badge/apache-035e53?style=for-the-badge&logo=apache&logoColor=fff" draggable="false">
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-cyber-dark/80 backdrop-blur-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white font-mono tracking-tighter">&lt;XO Aria/&gt;</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-moon dark:hidden text-gray-800"></i>
+                    <i class="fas fa-sun hidden dark:block text-cyber-neon"></i>
+                </button>
+                <a href="#contact" class="text-white bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-cyber-neon dark:text-black dark:hover:bg-[#00cc44] dark:focus:ring-green-800 transition-all shadow-[0_0_15px_rgba(0,255,85,0.4)]">Let's Talk</a>
             </div>
-            <div align="full-center">
-                <img src="assets/image-2.jpg" title="Arias Skills" alt="Arias Skills" class="img" draggable="false">
-            </div>
-        </div>
-    </section>
-
-    <section align="full-center" class="bg2 fadein">
-        <div class="split">
-            <div align="full-center">
-                <img src="assets/dev-person.svg" title="Why Arias" alt="Why Arias" class="svg" draggable="false">
-            </div>
-            <div>
-                <h2><span theme="dark">Why me</span></h2>
-                <ul>
-                    <li>Responsive</li>
-                    <li>SEO</li>
-                    <li>Modern</li>
-                    <li>Nice UI/UX</li>
-                    <li>Fast</li>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent">
+                    <li><a href="#home" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyber-neon md:p-0 dark:text-white dark:hover:text-cyber-neon transition-colors">Home</a></li>
+                    <li><a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyber-neon md:p-0 dark:text-white dark:hover:text-cyber-neon transition-colors">About</a></li>
+                    <li><a href="#projects" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyber-neon md:p-0 dark:text-white dark:hover:text-cyber-neon transition-colors">Projects</a></li>
+                    <li><a href="#skills" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyber-neon md:p-0 dark:text-white dark:hover:text-cyber-neon transition-colors">Skills</a></li>
                 </ul>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section align="full-center" class="fadein">
-        <div align="full-center" class="col">
-            <div align="full-center">
-                <h2><span theme="dark">Social media</span></h2>
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+        <div class="absolute top-20 right-20 w-72 h-72 bg-cyber-neon/20 rounded-full blur-[100px] animate-pulse-slow"></div>
+        <div class="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 border border-cyber-neon/50 rounded-full text-cyber-neon text-sm font-mono mb-2 bg-cyber-neon/5">
+                    Developer and Cybersecurity
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight">
+                    Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-neon to-blue-400 neon-text">XO Aria</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-mono h-16">
+                    <span id="typewriter"></span><span class="cursor-blink">|</span>
+                </h2>
+                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-lg">
+                    Developer, designer, and creator of modern digital experiences. Specializing in building fast, clean, and visually aesthetic websites.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+                    <a href="#projects" class="px-8 py-3 bg-gray-900 text-white dark:bg-cyber-neon dark:text-black font-bold rounded dark:hover:bg-[#00cc44] transition shadow-[0_0_20px_rgba(0,255,85,0.3)]">View Work</a>
+                    <a href="#contact" class="px-8 py-3 border border-gray-300 dark:border-gray-700 hover:border-cyber-neon dark:hover:border-cyber-neon hover:text-cyber-neon dark:hover:text-cyber-neon transition-all rounded bg-transparent">Contact Me</a>
+                </div>
             </div>
-            <div align="full-center">
-                <a href="mailto:hf18950@gmail.com" class="btn"><span>Email</span></a>
-                <a href="https://github.com/ariafi" class="btn"><span>Github</span></a>
+
+            <div class="relative hidden md:block animate-float">
+                <div class="glass-panel p-6 rounded-2xl border border-gray-700 relative z-10">
+                    <div class="flex gap-2 mb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="font-mono text-sm text-gray-400">
+                        <p><span class="text-purple-400">const</span> <span class="text-yellow-300">xo_aria</span> = {</p>
+                        <p class="pl-4">role: <span class="text-green-400">'Full Stack Developer'</span>,</p>
+                        <p class="pl-4">passion: [<span class="text-green-400">'UI/UX Design'</span>,<span class="text-green-400">'Cybersecurity'</span>],</p>
+                        <p class="pl-4">status: <span class="text-green-400">'Available for hire'</span>,</p>
+                        <p class="pl-4">skills: [<span class="text-blue-400">'Django'</span>, <span class="text-blue-400">'Tailwind'</span>, <span class="text-blue-400">'Python'</span>]</p>
+                        <p>}</p>
+                    </div>
+                </div>
+                <div class="absolute -z-10 top-10 -right-10 w-full h-full border-2 border-cyber-neon/20 rounded-2xl"></div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>Copyright &copy;2025 All rights reserved.</p>
-    </footer>
-    <script src="assets/script.js"></script>
-</body>
-</html>
+    <section id="about" class="py-20 bg-gray-50 dark:bg-[#0f0f0f]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="w-full h-80 bg-gradient-to-tr from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden flex items-center justify-center border border-gray-200 dark:border-gray-700">
+                        <i class="fas fa-user-astronaut text-9xl text-gray-400 dark:text-gray-700"></i>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 glass-panel rounded-xl flex items-center justify-center border border-cyber-neon/30 p-4">
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold text-cyber-neon">8+</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-widest">Years Exp.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="text-cyber-neon">Me</span></h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        I am a professional in Web Development, UI/UX Design, and SEO Optimization. My passion lies in creating visual aesthetics that don't compromise on performance. I specialize in building fast, clean, and modern websites that leave a lasting impression.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        As a skilled modern front-end developer with a keen eye for design, I bridge the gap between functional code and beautiful interfaces.
+                    </p>
 
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-cyber-neon"></i>
+                            <span class="text-sm font-medium">Responsive Design</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-cyber-neon"></i>
+                            <span class="text-sm font-medium">SEO Friendly</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-cyber-neon"></i>
+                            <span class="text-sm font-medium">High Performance</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-cyber-neon"></i>
+                            <span class="text-sm font-medium">Modern UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical <span class="text-cyber-neon">Arsenal</span></h2>
+                <p class="text-gray-500">A matrix of core technologies and tools I deploy</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fab fa-python text-5xl text-blue-400 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">Python (Django)</h4>
+                        <p class="text-sm text-gray-400 mb-2">Backend Expert</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-cyber-neon">90% Proficiency</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <span class="text-5xl text-cyan-400 font-bold group-hover:opacity-10 transition-opacity">TW</span>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">Tailwind CSS</h4>
+                        <p class="text-sm text-gray-400 mb-2">Rapid UI Development</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-cyber-neon">95% Proficiency</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fab fa-js-square text-5xl text-yellow-400 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">JavaScript (Node)</h4>
+                        <p class="text-sm text-gray-400 mb-2">Intermediate to Advanced</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-yellow-400">75% Proficiency</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fab fa-git-alt text-5xl text-orange-500 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">Git & GitHub</h4>
+                        <p class="text-sm text-gray-400 mb-2">Version Control</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-cyber-neon">Expert Use</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fas fa-database text-5xl text-indigo-400 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">SQL (DB)</h4>
+                        <p class="text-sm text-gray-400 mb-2">MySQL, SQLite</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-yellow-400">85% Proficiency</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fab fa-react text-5xl text-cyan-600 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">React Native</h4>
+                        <p class="text-sm text-gray-400 mb-2">Mobile Development</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-blue-400">60% Proficiency</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fas fa-pen-nib text-5xl text-pink-400 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">UI/UX Design</h4>
+                        <p class="text-sm text-gray-400 mb-2">Figma, Illustrator</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-yellow-400">Advanced</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fas fa-shield-alt text-5xl text-red-500 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">Cybersecurity</h4>
+                        <p class="text-sm text-gray-400 mb-2">Security Concepts</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-blue-400">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <span class="text-5xl text-green-400 font-bold group-hover:opacity-10 transition-opacity">C++</span>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">C / C++ / Java</h4>
+                        <p class="text-sm text-gray-400 mb-2">Foundation Languages</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-yellow-400">Familiar</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fas fa-brain text-5xl text-purple-400 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">Data Science/AI</h4>
+                        <p class="text-sm text-gray-400 mb-2">TensorFlow, NumPy</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-blue-400">Familiar</span>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-square p-4 glass-panel rounded-xl flex items-center justify-center border border-gray-700 hover:border-cyber-neon transition-all duration-300 overflow-hidden cursor-pointer">
+                    <i class="fas fa-ellipsis-h text-5xl text-gray-500 group-hover:opacity-10 transition-opacity"></i>
+                    <div class="absolute inset-0 bg-cyber-dark/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center">
+                        <h4 class="text-lg font-bold text-cyber-neon">Other Languages</h4>
+                        <p class="text-sm text-gray-400 mb-2">Lua, Kotlin, PHP, R</p>
+                        <span class="text-xs font-mono text-black px-2 py-0.5 rounded-full bg-gray-500">Learning</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-[#0f0f0f]">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Featured <span class="text-cyber-neon">Projects</span></h2>
+                    <p class="text-gray-500">A selection of my recent work</p>
+                </div>
+                <a href="https://github.com/xo-aria" class="hidden p-2 px-3 rounded transition md:flex items-center gap-2 text-cyber-neon hover:bg-gray-800">View GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="group relative rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-cyber-neon transition-all duration-300 shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-900 to-transparent opacity-60"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">HyCom</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">Django</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">Html</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">CSS</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">JS</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://hycom.ir/" class="flex-1 text-center py-2 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded hover:opacity-90 transition-opacity">Open</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-cyber-neon transition-all duration-300 shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-900 to-transparent opacity-60"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Vixy</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">Node.js</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://discord.gg/25Edp2zkry" class="flex-1 text-center py-2 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded hover:opacity-90 transition-opacity">Discord Official Channel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-cyber-neon transition-all duration-300 shadow-lg">
+                    <div class="h-48 bg-gray-200 dark:bg-gray-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-900 to-transparent opacity-60"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Hycom Radio</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">Django</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">Html</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">CSS</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">JS</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://hycom.ir/radio/" class="flex-1 text-center py-2 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded hover:opacity-90 transition-opacity">Open</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 relative overflow-hidden">
+        <div class="flex justify-center gap-6 mt-8">
+            <a href="https://github.com/xo-aria" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://t.me/xo_aria_dev" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                <i class="fab fa-telegram text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/xo_aria_dev/" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="mailto:hf18950@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                <i class="fas fa-envelope text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">Copyright ©2025 XO Aria. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+
+        const words = ["Web Developer", "UI/UX Designer", "SEO Specialist", "Cyber Security"];
+        let i = 0;
+        let timer;
+
+        function typeWriter() {
+            const heading = document.getElementById("typewriter");
+            const word = words[i];
+            const current = heading.textContent;
+
+            if (current.length < word.length) {
+                heading.textContent = word.substring(0, current.length + 1);
+                timer = setTimeout(typeWriter, 100);
+            } else {
+                setTimeout(deleteWriter, 2000);
+            }
+        }
+
+        function deleteWriter() {
+            const heading = document.getElementById("typewriter");
+            const current = heading.textContent;
+
+            if (current.length > 0) {
+                heading.textContent = current.substring(0, current.length - 1);
+                timer = setTimeout(deleteWriter, 50);
+            } else {
+                i = (i + 1) % words.length;
+                setTimeout(typeWriter, 200);
+            }
+        }
+
+        typeWriter();
+
+
+        const canvas = document.getElementById('three-js-canvas');
+        const sizes = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true
+        });
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const geometry = new THREE.TorusGeometry(5, 1.5, 16, 100);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0x004b1a,
+            metalness: 1,
+            roughness: 0.14,
+            transparent: true,
+            opacity: 0.4
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        const pointLight = new THREE.PointLight(0x00ff55, 1000, 100);
+        pointLight.position.set(0, 0, 10);
+        scene.add(pointLight);
+
+        camera.position.z = 15;
+        camera.position.y = 0;
+
+        const tick = () => {
+            mesh.rotation.x += 0.001;
+            mesh.rotation.y += 0.002;
+
+            renderer.render(scene, camera);
+            window.requestAnimationFrame(tick);
+        };
+        tick();
+
+        window.addEventListener('resize', () => {
+            sizes.width = window.innerWidth;
+            sizes.height = window.innerHeight;
+            camera.aspect = sizes.width / sizes.height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(sizes.width, sizes.height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        });
+
+
+        const threeDTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1
+            }
+        });
+
+        threeDTL
+            .to(camera.position, {
+                z: 5,
+                y: -2,
+                ease: "power1.inOut"
+            }, 0)
+            .to(mesh.rotation, {
+                x: 5,
+                y: 10,
+                z: 2,
+                ease: "none"
+            }, 0)
+
+        const aboutSection = document.querySelector('#about');
+        gsap.to(mesh.position, {
+            x: 5,
+            y: -5,
+            scrollTrigger: {
+                trigger: aboutSection,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            }
+        });
+
+        const skillsSection = document.querySelector('#skills');
+        gsap.to(mesh.position, {
+            x: -8,
+            y: 0,
+            z: 0,
+            scrollTrigger: {
+                trigger: skillsSection,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            }
+        });
+
+
+        gsap.set('section:not(#home)', {
+            y: 50
+        });
+
+        gsap.utils.toArray("section:not(#home)").forEach((section) => {
+            gsap.fromTo(section, {
+                y: 50
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        gsap.from(".grid > .group", {
+            y: 20,
+            stagger: 0.1,
+            duration: 0.5,
+            scrollTrigger: {
+                trigger: "#skills",
+                start: "top 60%",
+                toggleActions: "play none none none"
+            }
+        });
+    </script>
+</body>
+
+</html>
